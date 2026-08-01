@@ -460,16 +460,16 @@ B씨의 고소로 경찰 수사가 개시된 이후에도 A씨의 태도는 불�
 
     if (factorScore >= 75) {
       matchLevel = 'high';
-      pillText = '🎯 높은 일치도 (전문 판사급 심리)';
-      matchMessage = '👏 대단합니다! 실제 대법원 양형위원회의 심리 기준 및 법원의 주요 가중/감경 사유와 거의 완벽하게 일치하는 판결을 내리셨습니다.';
+      pillText = '🎯 높은 일치도 (AI 판사급 심리)';
+      matchMessage = '👏 대단합니다! AI 판결의 심리 기준 및 법원의 주요 가중/감경 사유와 거의 완벽하게 일치하는 판결을 내리셨습니다.';
     } else if (factorScore >= 40) {
       matchLevel = 'medium';
       pillText = '⚖️ 보통 일치도 (신중한 심리)';
-      matchMessage = '👍 전반적으로 주요 양형 사유를 잘 반영하셨습니다. 아래의 실제 법원 판결 및 양형 이유와 체크 사유를 비교해보세요.';
+      matchMessage = '👍 전반적으로 주요 양형 사유를 잘 반영하셨습니다. AI 판결 및 실제 법원 판결 이유와 체크 사유를 비교해보세요.';
     } else {
       matchLevel = 'low';
       pillText = '💡 자비롭거나 엄격한 판결';
-      matchMessage = '🤔 실제 법령 및 대법원 양형기준과 다소 차이가 있습니다. 하단의 실제 법원 판결 및 법적 근거를 통해 사유를 확인해보세요.';
+      matchMessage = '🤔 AI 판결 기준 및 실제 대법원 양형기준과 다소 차이가 있습니다. 하단의 실제 법원 판결 및 법적 근거를 통해 사유를 확인해보세요.';
     }
 
     resultMatchStatus.className = `accuracy-pill ${matchLevel}`;
