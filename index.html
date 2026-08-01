@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 딜레마 법정: 당신의 판결은?</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Noto Serif KR (클래식/법정 폰트), Gmarket Sans / Noto Sans KR (본문) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="court-wrapper">
+    <!-- 법정 헤더 -->
+    <header class="court-header">
+      <div class="header-badge">
+        <span class="scales-icon">⚖️</span>
+        <span>대한민국 AI 윤리 모의법정</span>
+      </div>
+      <h1 class="court-title">AI 딜레마 법정: 당신의 판결은?</h1>
+      <p class="court-subtitle">"기술의 발전 뒤에 숨겨진 책임, 재판장이 되어 올바른 법과 윤리의 판결을 내려주세요."</p>
+    </header>
+
+    <main class="court-container">
+      <!-- 🎮 [1단계] 메인 화면: 사례 선택 -->
+      <section id="step-1" class="step-view active">
+        <div class="step-header">
+          <div class="step-tag">STEP 1</div>
+          <h2>심리할 AI 윤리 재판 사건을 선택하세요</h2>
+        </div>
+
+        <div class="case-grid" id="case-cards-container">
+          <!-- JS로 사례 카드 3개 동적 생성 -->
+        </div>
+      </section>
+
+      <!-- 🎮 [2단계] 사건 심리 및 모의 판결 화면 -->
+      <section id="step-2" class="step-view">
+        <div class="view-navigation">
+          <button type="button" class="btn-back" id="btn-back-to-step1">
+            ← 사례 목록으로 돌아가기
+          </button>
+          <div class="case-badge" id="trial-case-badge">Case 1</div>
+        </div>
+
+        <div class="trial-layout">
+          <!-- 좌측: 사건 정보 및 스토리 -->
+          <div class="trial-main">
+            <article class="paper-card story-card">
+              <div class="card-header">
+                <span class="gavel-icon">🔨</span>
+                <h2 id="trial-case-title">사건 제목</h2>
+              </div>
+              
+              <div class="story-content" id="trial-story-body">
+                <!-- 사건 상세 줄글 스토리 -->
+              </div>
+
+              <div class="arguments-grid">
+                <div class="arg-box suspect-arg">
+                  <h3>⚖️ 피의자(A씨) 측 주장</h3>
+                  <p id="trial-suspect-arg"></p>
+                </div>
+                <div class="arg-box victim-arg">
+                  <h3>⚖️ 피해자(B씨) 측 주장</h3>
+                  <p id="trial-victim-arg"></p>
+                </div>
+              </div>
+            </article>
+
+            <!-- 양형 요소 선택 영역 -->
+            <article class="paper-card evaluation-card">
+              <div class="card-header">
+                <span class="section-num">1</span>
+                <h2>양형 요소 판단 (해당되는 사유를 체크하세요)</h2>
+              </div>
+
+              <div class="checklist-container">
+                <!-- 가중요소 그룹 -->
+                <div class="check-group agg-group">
+                  <div class="group-title agg-title">
+                    <span>🔺 가중요소 (처벌 강화 사유)</span>
+                    <span class="group-count" id="agg-count-badge">0 / 5</span>
+                  </div>
+                  <div class="check-list" id="agg-checklist">
+                    <!-- 가중요소 체크박스 항목 5개 -->
+                  </div>
+                </div>
+
+                <!-- 감경요소 그룹 -->
+                <div class="check-group mitig-group">
+                  <div class="group-title mitig-title">
+                    <span>🔻 감경요소 (처벌 완화 사유)</span>
+                    <span class="group-count" id="mitig-count-badge">0 / 5</span>
+                  </div>
+                  <div class="check-list" id="mitig-checklist">
+                    <!-- 감경요소 체크박스 항목 5개 -->
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 선고 형량 선택 영역 -->
+            <article class="paper-card sentence-card">
+              <div class="card-header">
+                <span class="section-num">2</span>
+                <h2>최종 선고 형량 결정</h2>
+              </div>
+
+              <div class="sentence-controls">
+                <div class="control-box">
+                  <label for="select-fine">벌금형 선택</label>
+                  <select id="select-fine" class="court-select">
+                    <option value="none">선택 안 함 (벌금 미부과)</option>
+                    <option value="300만 원 이하">300만 원 이하</option>
+                    <option value="500만 원 이하">500만 원 이하</option>
+                    <option value="700만 원 이하">700만 원 이하</option>
+                    <option value="1,000만 원 이하">1,000만 원 이하</option>
+                    <option value="1,500만 원 이하">1,500만 원 이하</option>
+                    <option value="2,000만 원 이하">2,000만 원 이하</option>
+                  </select>
+                </div>
+
+                <div class="control-box">
+                  <label for="select-prison">징역형 선택</label>
+                  <select id="select-prison" class="court-select">
+                    <option value="none">선택 안 함 (징역 미선고)</option>
+                    <option value="징역 6개월">징역 6개월</option>
+                    <option value="징역 1년">징역 1년</option>
+                    <option value="징역 2년">징역 2년</option>
+                    <option value="징역 3년">징역 3년</option>
+                    <option value="징역 5년">징역 5년</option>
+                  </select>
+                </div>
+
+                <div class="control-box">
+                  <label for="select-probation">집행유예 선택</label>
+                  <select id="select-probation" class="court-select">
+                    <option value="none">선택 안 함 (실형 또는 벌금)</option>
+                    <option value="집행유예 1년">집행유예 1년</option>
+                    <option value="집행유예 2년">집행유예 2년</option>
+                    <option value="집행유예 3년">집행유예 3년</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="action-bar">
+                <button type="button" id="btn-submit-verdict" class="btn-judge">
+                  <span>⚖️ 판결 선고 및 결과 비교하기</span>
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- 우측: 재판 참고 가이드 및 관련 법조문 -->
+          <aside class="trial-sidebar">
+            <div class="paper-card guide-card">
+              <div class="guide-header">
+                <h3>💡 재판 참고 가이드</h3>
+              </div>
+
+              <div class="guide-section">
+                <h4>📌 집행유예(집행猶豫)란?</h4>
+                <p>3년 이하의 징역이나 금고 또는 500만 원 이하의 벌금을 선고할 경우, 1년 이상 5년 이하의 기간 동안 형의 집행을 미루어 주는 제도입니다. (형법 제62조)</p>
+                <div class="example-box">
+                  <small>• 예1: <b>징역 1년에 집행유예 2년</b> (2년 동안 큰 사고 없이 지내면 감옥에 가지 않음)</small><br>
+                  <small>• 예2: <b>벌금 500만 원에 집행유예 1년</b> (벌금 납부를 1년간 유예)</small>
+                </div>
+              </div>
+
+              <div class="guide-section">
+                <h4>📌 사건 관련 주요 법조문</h4>
+                <div class="law-box" id="guide-law-content">
+                  <!-- 사례별 법조문 동적 렌더링 -->
+                </div>
+              </div>
+
+              <div class="guide-section">
+                <h4>📌 양형 참고 규정 (형법 제51조)</h4>
+                <p class="law-desc">형을 정할 때는 다음 4가지 사항을 반드시 참작해야 합니다.</p>
+                <ol class="rule-list">
+                  <li>범인의 연령, 성행, 지능과 환경</li>
+                  <li>피해자에 대한 관계</li>
+                  <li>범행의 동기, 수단과 결과</li>
+                  <li>범행 후의 정황</li>
+                </ol>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- 🎮 [3단계] 결과 및 판결문 비교 화면 -->
+      <section id="step-3" class="step-view">
+        <div class="paper-card result-summary-card">
+          <div class="result-header">
+            <h2>⚖️ 판결 결과 비교 및 심리 평가</h2>
+            <div class="accuracy-pill" id="result-match-status">일치도 평가 계산 중</div>
+          </div>
+
+          <!-- 형량 및 체크리스트 좌우 비교 -->
+          <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th class="my-col">🏛️ 내가 내린 판결 (재판장)</th>
+                  <th class="std-col">🏛️ 법원 표준 판결 (대법원 기준)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="verdict-tag my-verdict" id="my-verdict-summary">-</div>
+                  </td>
+                  <td>
+                    <div class="verdict-tag std-verdict" id="std-verdict-summary">-</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="checklist-cell">
+                    <h4>내가 인정한 양형 요소</h4>
+                    <ul id="my-checked-factors" class="factor-list"></ul>
+                  </td>
+                  <td class="checklist-cell">
+                    <h4>실제 법원 인정 양형 요소</h4>
+                    <ul id="std-checked-factors" class="factor-list"></ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="feedback-banner" id="result-feedback-banner">
+            <!-- 평가 멘트 동적 렌더링 -->
+          </div>
+        </div>
+
+        <!-- 가상 판결문 문서 영역 -->
+        <article class="court-verdict-paper">
+          <div class="verdict-seal">判決</div>
+          <h2 class="verdict-title">판 결 문</h2>
+          
+          <div class="verdict-meta">
+            <p><strong>사건번호:</strong> <span id="v-case-no">2026고단1004</span></p>
+            <p><strong>사건명:</strong> <span id="v-case-name">사건명</span></p>
+            <p><strong>피고인:</strong> <span id="v-defendant">피고인 A</span></p>
+          </div>
+
+          <hr class="verdict-divider" />
+
+          <div class="verdict-section">
+            <h3 class="v-sec-title">【 주 문 】</h3>
+            <div class="v-content order-text" id="v-order-text">
+              <!-- 주 문 내용 -->
+            </div>
+          </div>
+
+          <div class="verdict-section">
+            <h3 class="v-sec-title">【 양 형 이 유 및 법 적 근 거 】</h3>
+            <div class="v-content" id="v-reason-text">
+              <!-- 양형 이유 세부 내용 -->
+            </div>
+          </div>
+
+          <hr class="verdict-divider" />
+
+          <div class="verdict-section">
+            <h3 class="v-sec-title">【 사례별 실제 법적 처분 근거 요약 】</h3>
+            <div class="law-summary-box" id="v-law-summary">
+              <!-- 법적 처분 근거 요약 -->
+            </div>
+          </div>
+        </article>
+
+        <!-- AI 윤리 한 줄 교훈 카드 -->
+        <article class="paper-card lesson-card">
+          <div class="lesson-header">
+            <span class="quote-icon">💡</span>
+            <h3>AI 윤리 재판관의 한 줄 교훈</h3>
+          </div>
+          <blockquote class="lesson-quote" id="result-lesson-quote">
+            "AI 기술을 사용하는 인간의 책임은 결코 가볍지 않습니다."
+          </blockquote>
+        </article>
+
+        <!-- 하단 네비게이션 버튼 -->
+        <div class="bottom-nav">
+          <button type="button" class="btn-sec" id="btn-retry-case">
+            🔄 다른 사례 심리하기
+          </button>
+          <button type="button" class="btn-pri" id="btn-home">
+            🏛️ 메인 화면으로 돌아가기
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="court-footer">
+      <p>© 2026 AI 윤리 모의법정 교육 시스템 | 정보교과 & AI 윤리 교육용 개발</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
