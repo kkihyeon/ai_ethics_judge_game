@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI 딜레마 법정: 당신의 판결은?</title>
+  <title>디지털 윤리 딜레마 법정: 당신의 판결은?</title>
   <link rel="stylesheet" href="style.css" />
   <!-- Google Fonts: Noto Serif KR (클래식/법정 폰트), Gmarket Sans / Noto Sans KR (본문) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
   <div class="court-wrapper">
     <!-- 법정 헤더 -->
     <header class="court-header">
       <div class="header-badge">
         <span class="scales-icon">⚖️</span>
-        <span>대한민국 AI 윤리 모의법정</span>
+        <span>대한민국 디지털 윤리 모의법정</span>
       </div>
-      <h1 class="court-title">AI 딜레마 법정: 당신의 판결은?</h1>
-      <p class="court-subtitle">"기술의 발전 뒤에 숨겨진 책임, 재판장이 되어 올바른 법과 윤리의 판결을 내려주세요."</p>
+      <h1 class="court-title">디지털 윤리 딜레마 법정: 당신의 판결은?</h1>
+      <p class="court-subtitle">"디지털 사회와 신기술의 발전 뒤에 숨겨진 책임, 재판장이 되어 올바른 법과 윤리의 판결을 내려주세요."</p>
     </header>
 
     <main class="court-container">
@@ -27,11 +31,11 @@
       <section id="step-1" class="step-view active">
         <div class="step-header">
           <div class="step-tag">STEP 1</div>
-          <h2>심리할 AI 윤리 재판 사건을 선택하세요</h2>
+          <h2>심리할 디지털 윤리 재판 사건을 선택하세요</h2>
         </div>
 
         <div class="case-grid" id="case-cards-container">
-          <!-- JS로 사례 카드 3개 동적 생성 -->
+          <!-- JS로 사례 카드 5개 동적 생성 -->
         </div>
       </section>
 
@@ -39,7 +43,7 @@
       <section id="step-2" class="step-view">
         <div class="view-navigation">
           <button type="button" class="btn-back" id="btn-back-to-step1">
-            ← 사례 목록으로 돌아가기
+            ← 이전 화면으로 (사례 목록)
           </button>
           <div class="case-badge" id="trial-case-badge">Case 1</div>
         </div>
@@ -52,18 +56,18 @@
                 <span class="gavel-icon">🔨</span>
                 <h2 id="trial-case-title">사건 제목</h2>
               </div>
-              
+
               <div class="story-content" id="trial-story-body">
                 <!-- 사건 상세 줄글 스토리 -->
               </div>
 
               <div class="arguments-grid">
                 <div class="arg-box suspect-arg">
-                  <h3>⚖️ 피의자(A씨) 측 주장</h3>
+                  <h3>⚖️ 피의자 측 주장</h3>
                   <p id="trial-suspect-arg"></p>
                 </div>
                 <div class="arg-box victim-arg">
-                  <h3>⚖️ 피해자(B씨) 측 주장</h3>
+                  <h3>⚖️ 피해자 측 주장</h3>
                   <p id="trial-victim-arg"></p>
                 </div>
               </div>
@@ -117,8 +121,9 @@
                     <option value="500만 원 이하">500만 원 이하</option>
                     <option value="700만 원 이하">700만 원 이하</option>
                     <option value="1,000만 원 이하">1,000만 원 이하</option>
-                    <option value="1,500만 원 이하">1,500만 원 이하</option>
                     <option value="2,000만 원 이하">2,000만 원 이하</option>
+                    <option value="3,000만 원 이하">3,000만 원 이하</option>
+                    <option value="5,000만 원 이상">5,000만 원 이상</option>
                   </select>
                 </div>
 
@@ -130,7 +135,7 @@
                     <option value="징역 1년">징역 1년</option>
                     <option value="징역 2년">징역 2년</option>
                     <option value="징역 3년">징역 3년</option>
-                    <option value="징역 5년">징역 5년</option>
+                    <option value="징역 5년이상">징역 5년 이상</option>
                   </select>
                 </div>
 
@@ -166,7 +171,7 @@
                 <h4>📌 집행유예(집행猶豫)란?</h4>
                 <p>3년 이하의 징역이나 금고 또는 500만 원 이하의 벌금을 선고할 경우, 1년 이상 5년 이하의 기간 동안 형의 집행을 미루어 주는 제도입니다. (형법 제62조)</p>
                 <div class="example-box">
-                  <small>• 예1: <b>징역 1년에 집행유예 2년</b> (2년 동안 큰 사고 없이 지내면 감옥에 가지 않음)</small><br>
+                  <small>• 예1: <b>징역 1년에 집행유예 2년</b> (2년 동안 큰 사고 없이 지내면 교도소에 수감되지 않음)</small><br>
                   <small>• 예2: <b>벌금 500만 원에 집행유예 1년</b> (벌금 납부를 1년간 유예)</small>
                 </div>
               </div>
@@ -207,7 +212,7 @@
               <thead>
                 <tr>
                   <th class="my-col">🏛️ 내가 내린 판결 (재판장)</th>
-                  <th class="std-col">🤖 AI 판결</th>
+                  <th class="std-col">🏛️ 실제 법원 판결</th>
                 </tr>
               </thead>
               <tbody>
@@ -225,7 +230,7 @@
                     <ul id="my-checked-factors" class="factor-list"></ul>
                   </td>
                   <td class="checklist-cell">
-                    <h4>AI 판결 인정 양형 요소</h4>
+                    <h4>실제 법원 인정 양형 요소</h4>
                     <ul id="std-checked-factors" class="factor-list"></ul>
                   </td>
                 </tr>
@@ -242,11 +247,11 @@
         <article class="court-verdict-paper">
           <div class="verdict-seal">判決</div>
           <h2 class="verdict-title">판 결 문</h2>
-          
+
           <div class="verdict-meta">
-            <p><strong>사건번호:</strong> <span id="v-case-no">2026고단1004</span></p>
+            <p><strong>사건번호:</strong> <span id="v-case-no">사건번호</span></p>
             <p><strong>사건명:</strong> <span id="v-case-name">사건명</span></p>
-            <p><strong>피고인:</strong> <span id="v-defendant">피고인 A</span></p>
+            <p><strong>피고인:</strong> <span id="v-defendant">피고인</span></p>
           </div>
 
           <hr class="verdict-divider" />
@@ -284,21 +289,21 @@
           </div>
         </article>
 
-        <!-- AI 윤리 한 줄 교훈 카드 -->
+        <!-- 디지털 윤리 한 줄 교훈 카드 -->
         <article class="paper-card lesson-card">
           <div class="lesson-header">
             <span class="quote-icon">💡</span>
-            <h3>AI 윤리 재판관의 한 줄 교훈</h3>
+            <h3>디지털 윤리 재판관의 한 줄 교훈</h3>
           </div>
           <blockquote class="lesson-quote" id="result-lesson-quote">
-            "AI 기술을 사용하는 인간의 책임은 결코 가볍지 않습니다."
+            "디지털 기술을 사용하는 인간의 책임은 결코 가볍지 않습니다."
           </blockquote>
         </article>
 
         <!-- 하단 네비게이션 버튼 -->
         <div class="bottom-nav">
-          <button type="button" class="btn-sec" id="btn-retry-case">
-            🔄 다른 사례 심리하기
+          <button type="button" class="btn-sec" id="btn-back-to-step2">
+            ← 이전 화면으로 (판결 수정하기)
           </button>
           <button type="button" class="btn-pri" id="btn-home">
             🏛️ 메인 화면으로 돌아가기
@@ -309,10 +314,11 @@
 
     <!-- 푸터 -->
     <footer class="court-footer">
-      <p>© 2026 AI 윤리 모의법정 교육 시스템 | 정보교과 & AI 윤리 교육용 개발</p>
+      <p>© 2026 디지털 윤리 모의법정 교육 시스템 | 정보교과 & 디지털 윤리 교육용 개발</p>
     </footer>
   </div>
 
   <script src="app.js"></script>
 </body>
+
 </html>
