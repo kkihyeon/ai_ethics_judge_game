@@ -377,7 +377,9 @@ A씨는 불특정 다수가 참여하는 일방향 소통 채널을 개설한 �
             <span class="case-category">${c.category}</span>
           </div>
           <h3 class="case-card-title">${c.title}</h3>
-          <p class="case-card-desc">${parseText(c.summary)}</p>
+          <div class="case-card-img-wrapper">
+            <img src="src/${idx + 1}.case.png" alt="${c.title}" class="case-card-img" />
+          </div>
         </div>
         <button type="button" class="btn-start-trial" data-id="${c.id}">
           <span>⚖️ 사건 심리하기</span>
@@ -616,7 +618,16 @@ A씨는 불특정 다수가 참여하는 일방향 소통 채널을 개설한 �
 
   // Step 3 하단 '← 이전 화면으로 (판결 수정하기)'
   if (btnBackStep2) {
-    btnBackStep2.addEventListener('click', () => switchView('step-2'));
+    btnBackStep2.addEventListener('click', () => {
+      document.querySelectorAll('.chk-agg').forEach(chk => {
+        chk.checked = selectedAggregating.has(chk.value);
+      });
+      document.querySelectorAll('.chk-mit').forEach(chk => {
+        chk.checked = selectedMitigating.has(chk.value);
+      });
+      updateCounts();
+      switchView('step-2');
+    });
   }
 
   // Step 3 하단 '🏛️ 메인 화면으로 돌아가기'

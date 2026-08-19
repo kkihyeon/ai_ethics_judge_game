@@ -218,15 +218,31 @@ body {
   font-size: 1.45rem;
   color: var(--wood-dark);
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   line-height: 1.35;
 }
 
-.case-card-desc {
-  font-size: 1.05rem;
-  color: var(--text-sub);
-  margin-bottom: 24px;
-  flex: 1;
+.case-card-img-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: 1px solid var(--wood-border);
+  background-color: #fdfbf7;
+  box-shadow: inset 0 0 10px rgba(58, 34, 18, 0.05);
+}
+
+.case-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.case-card:hover .case-card-img {
+  transform: scale(1.04);
 }
 
 .btn-start-trial {
