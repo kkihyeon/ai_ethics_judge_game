@@ -11,5 +11,4 @@ combined = combined.replace(/<link\s+rel=["']stylesheet["']\s+href=["']style\.cs
 combined = combined.replace(/<script\s+src=["']app\.js["']><\/script>/i, `<script>\n${js}\n</script>`);
 
 fs.writeFileSync(path.join(baseDir, 'digital_ethics.html'), combined, 'utf8');
-fs.writeFileSync(path.join(baseDir, 'digtal_eithics.html'), combined, 'utf8');
-console.log('Single HTML files successfully created!');
+console.log('Single HTML file (digital_ethics.html) successfully created!');
