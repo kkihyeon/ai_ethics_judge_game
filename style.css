@@ -358,6 +358,38 @@ body {
   font-weight: 700;
 }
 
+/* 교육용 시나리오 면책 및 안내 배너 */
+.disclaimer-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(180, 83, 9, 0.07);
+  border: 1px solid rgba(180, 83, 9, 0.25);
+  border-left: 4px solid var(--gold-primary);
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.disclaimer-icon {
+  font-size: 1.15rem;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.disclaimer-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--wood-medium);
+  margin: 0;
+  word-break: keep-all;
+}
+
+.disclaimer-text strong {
+  color: var(--gold-primary);
+  font-weight: 700;
+}
+
 /* 줄글 스토리 및 주장 */
 .story-content {
   font-size: 1.15rem;
@@ -854,6 +886,16 @@ body {
   line-height: 1.7;
   padding-left: 16px;
   border-left: 3px solid var(--gold-border);
+}
+
+.lesson-quote-secondary {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(245, 158, 11, 0.25);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #fef08a;
+  border-left: 3px solid #f59e0b;
 }
 
 /* 하단 버튼 네비게이션 */
